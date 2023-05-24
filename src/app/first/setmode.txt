@@ -1,0 +1,49 @@
+
+import vtkXMLImageDataReader from '@kitware/vtk.js/IO/XML/XMLImageDataReader';
+//vtk.Rendering.Core.vtkImageMapper
+import vtkImageMapper from '@kitware/vtk.js/Rendering/Core/ImageMapper';
+import vtkActor from '@kitware/vtk.js/Rendering/Core/Actor';
+import vtkRenderer from '@kitware/vtk.js/Rendering/Core/Renderer';
+import vtkRenderWindow from '@kitware/vtk.js/Rendering/Core/RenderWindow';
+import vtkRenderWindowInteractor from '@kitware/vtk.js/Rendering/Core/RenderWindowInteractor';
+
+
+async setModel() {
+    // Create a vtkXMLImageDataReader instance
+    const reader = vtkXMLImageDataReader.newInstance();
+
+    // Set the URL of the VTS file
+    reader.setUrl('C:/Users/qsxul/Dropbox (CSER)/lei.xu@utah.edu\'s files/CUSP/server/api/vtk/CSM_T4_1188.vts');
+
+    // Load the VTS file
+    reader.loadData().then(() => {
+      // Get the vtkImageData object from the reader
+      const imageData = reader.getOutputData(0);
+
+      // Create a vtkImageMapper instance
+      const mapper:any = vtkImageMapper.newInstance();
+      mapper.setInputData(imageData);
+
+      // Create a vtkActor2D instance
+      const actor = vtkActor.newInstance();
+      actor.setMapper(mapper);
+
+      // Create a vtkRenderer instance
+      const renderer = vtkRenderer.newInstance();
+      renderer.addActor(actor);
+
+      // Create a vtkRenderWindow instance
+      const renderWindow = vtkRenderWindow.newInstance();
+      renderWindow.addRenderer(renderer);
+
+      // Create a vtkRenderWindowInteractor instance
+      const interactor =
+        vtkRenderWindowInteractor.newInstance();
+      interactor.setView(renderWindow);
+
+      // Initialize the interactor
+      interactor.initialize();
+      interactor.bindEvents(document.getElementById('vtkContainer'));
+      interactor.start();
+    });
+  }
