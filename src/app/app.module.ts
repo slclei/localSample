@@ -8,11 +8,13 @@ import { TestComponent } from './test/test.component';
 import { FirstComponent } from './first/first.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { GeojsonComponent } from './geojson/geojson.component';
 
 @NgModule({
   declarations: [
     FirstComponent,
     AppComponent,
+    GeojsonComponent,
     ModelDialogComponent,
     TestComponent
   ],

@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-
+//<app-test class="app-test"></app-test>
 @Component({
   selector: 'app-model-dialog',
   templateUrl: './model-dialog.component.html',
