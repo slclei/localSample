@@ -26,7 +26,7 @@ import { ModelDialogComponent } from '../model-dialog/model-dialog.component';
 })
 export class FirstComponent {
   view: any;
-  parentHeight = 100;
+  parentHeight = 80;
 
   // Child
   @ViewChild('viewDiv', { static: true }) private viewDiv:

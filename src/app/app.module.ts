@@ -9,6 +9,7 @@ import { FirstComponent } from './first/first.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { GeojsonComponent } from './geojson/geojson.component';
+import { InteractvieComponent } from './interactvie/interactvie.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { GeojsonComponent } from './geojson/geojson.component';
     AppComponent,
     GeojsonComponent,
     ModelDialogComponent,
-    TestComponent
+    TestComponent,
+    InteractvieComponent
   ],
   imports: [
     BrowserModule,
