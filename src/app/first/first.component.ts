@@ -87,15 +87,15 @@ export class FirstComponent {
 
     const diaRef = (this.dialogRef = this.dialog.open(
       ModelDialogComponent,
-      DiaCon
+      //DiaCon
     ));
 
     //get element for the dialog
     let nElem = diaRef['_containerInstance']['_elementRef'].nativeElement;
 
     nElem.style.position = 'absolute';
-    nElem.style.height = '50vh';
-    nElem.style.width = '50vw';
+    nElem.style.height = '100%';
+    nElem.style.width = '100%';
     nElem.style.top = '100px';
     nElem.style.left = '100px';
 

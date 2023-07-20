@@ -4,6 +4,7 @@ import {
   AfterViewInit,
   ViewChild,
   ElementRef,
+  Renderer2,
 } from '@angular/core';
 import * as THREE from 'three';
 import Stats from 'three/examples/jsm/libs/stats.module.js';
@@ -35,7 +36,10 @@ export class InteractvieComponent implements AfterViewInit {
     this.animate();
   }
 
-  @ViewChild('app_interactvie') private app_interactvie: ElementRef | any;
+  constructor(
+    private renderer2: Renderer2,
+    private elementRef: ElementRef
+  ){}
 
   private init() {
     this.container = document.getElementById('inter_container');
@@ -81,15 +85,15 @@ export class InteractvieComponent implements AfterViewInit {
 
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.renderer.setPixelRatio(window.devicePixelRatio);
-    this.renderer.setSize(800, 300);
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.useLegacyLights = false;
     this.container.appendChild(this.renderer.domElement);
+    this.renderer.domElement.style.position="fixed";
 
     this.stats = new Stats();
     this.container.appendChild(this.stats.dom);
 
     this.container.addEventListener('mousemove', this.onPointerMove.bind(this));
-    console.log(this.pointer);
 
     window.addEventListener('resize', this.onWindowResize.bind(this));
   }
@@ -101,9 +105,18 @@ export class InteractvieComponent implements AfterViewInit {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
-  private onPointerMove(event: any) {
-    this.pointer.x = ( event.clientX / this.renderer.domElement.offsetWidth ) * 2 - 1;
-		this.pointer.y = - ( event.clientY / this.renderer.domElement.offsetHeight ) * 2 + 1;
+  private onPointerMove(event: MouseEvent) {
+    //const A=this.container.getBoundingClientRect();
+    let B= this.renderer.domElement.getBoundingClientRect();
+
+    this.pointer.x = ( (event.clientX-B.left) / (B.right-B.left) ) * 2 - 1;
+		this.pointer.y = - ( (event.clientY-B.top) /(B.bottom-B.top) ) * 2 + 1;
+
+    /*
+    const canvas = document.querySelector('canvas');
+    const rect=canvas!.getBoundingClientRect();
+    this.pointer.x=(event.clientX-rect.left)*(canvas!.width/rect.width);
+    this.pointer.y=(event.clientY-rect.top)*(canvas!.height/rect.height);*/
   }
 
   //

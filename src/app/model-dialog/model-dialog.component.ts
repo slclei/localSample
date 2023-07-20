@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 //<app-test class="app-test"></app-test>
@@ -18,6 +18,8 @@ export class ModelDialogComponent implements OnInit{
     ngOnInit() {
     }
 
+    @ViewChild('app_interactvie',{static:true}) interRef!:ElementRef;
+//<app-interactvie #interactive class="app-test"></app-interactvie>
     save() {
         this.dialogRef.close();
     }
