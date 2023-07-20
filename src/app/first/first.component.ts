@@ -87,7 +87,7 @@ export class FirstComponent {
 
     const diaRef = (this.dialogRef = this.dialog.open(
       ModelDialogComponent,
-      //DiaCon
+      DiaCon
     ));
 
     //get element for the dialog
