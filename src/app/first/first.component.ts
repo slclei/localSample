@@ -94,8 +94,8 @@ export class FirstComponent {
     let nElem = diaRef['_containerInstance']['_elementRef'].nativeElement;
 
     nElem.style.position = 'absolute';
-    nElem.style.height = '100%';
-    nElem.style.width = '100%';
+    nElem.style.height = '50%';
+    nElem.style.width = '50%';
     nElem.style.top = '100px';
     nElem.style.left = '100px';
 

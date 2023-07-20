@@ -88,7 +88,7 @@ export class InteractvieComponent implements AfterViewInit {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.useLegacyLights = false;
     this.container.appendChild(this.renderer.domElement);
-    this.renderer.domElement.style.position="fixed";
+    this.renderer.domElement.style.position="static";
 
     this.stats = new Stats();
     this.container.appendChild(this.stats.dom);

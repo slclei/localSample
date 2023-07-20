@@ -10,6 +10,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { GeojsonComponent } from './geojson/geojson.component';
 import { InteractvieComponent } from './interactvie/interactvie.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { InteractvieComponent } from './interactvie/interactvie.component';
     AppRoutingModule,
     MatDialogModule,
     DragDropModule,
+    FormsModule
   ],
   exports:[MatDialogModule,DragDropModule],
   providers: [],

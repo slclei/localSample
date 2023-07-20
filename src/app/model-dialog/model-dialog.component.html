@@ -1,10 +1,28 @@
-<div class="model-dialog" cdkDrag cdkDragRootElement=".mat-mdc-dialog-container">
-    <h1 mat-dialog-title cdkDragHandle class="title">Drag me here</h1>
-    <div mat-dialog-actions class="action">
-        <button class="button" (click)="close()">Close</button>
-    </div>
-    <div mat-dialog-content id="canvas-P" class="model-dialog-inter">
-        <app-interactvie #app_interactvie></app-interactvie>
-    </div>
-
+<div
+  class="model-dialog"
+  cdkDrag
+  cdkDragRootElement=".mat-mdc-dialog-container"
+>
+  <h1 mat-dialog-title cdkDragHandle class="title">Drag me here</h1>
+  <div mat-dialog-actions class="action">
+    <button class="button" (click)="close()">Close</button>
+  </div>
+  <div>
+    <label for="component-select">Select component:</label>
+    <select
+      id="component-select"
+      [(ngModel)]="selectedComponent"
+      (ngModelChange)="addComponent()"
+    >
+      <option value=""></option>
+      <option value="Interact">Interactive</option>
+      <option value="Test">Test</option>
+    </select>
+  </div>
+  <div
+    mat-dialog-content
+    #canvas_PRef
+    id="canvas_PRef"
+    class="model-dialog-inter"
+  ></div>
 </div>
