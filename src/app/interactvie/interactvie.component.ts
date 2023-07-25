@@ -8,8 +8,6 @@ import {
 } from '@angular/core';
 import * as THREE from 'three';
 import Stats from 'three/examples/jsm/libs/stats.module.js';
-import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls.js';
-import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 
 @Component({
   selector: 'app-interactvie',
@@ -60,6 +58,7 @@ export class InteractvieComponent implements AfterViewInit {
 
     const geometry = new THREE.BoxGeometry();
 
+    //build new model
     for (let i = 0; i < 2000; i++) {
       const object = new THREE.Mesh(
         geometry,
@@ -111,12 +110,6 @@ export class InteractvieComponent implements AfterViewInit {
 
     this.pointer.x = ( (event.clientX-B.left) / (B.right-B.left) ) * 2 - 1;
 		this.pointer.y = - ( (event.clientY-B.top) /(B.bottom-B.top) ) * 2 + 1;
-
-    /*
-    const canvas = document.querySelector('canvas');
-    const rect=canvas!.getBoundingClientRect();
-    this.pointer.x=(event.clientX-rect.left)*(canvas!.width/rect.width);
-    this.pointer.y=(event.clientY-rect.top)*(canvas!.height/rect.height);*/
   }
 
   //

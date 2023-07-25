@@ -11,6 +11,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { GeojsonComponent } from './geojson/geojson.component';
 import { InteractvieComponent } from './interactvie/interactvie.component';
 import { FormsModule } from '@angular/forms';
+import { ShapesComponent } from './shapes/shapes.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     GeojsonComponent,
     ModelDialogComponent,
     TestComponent,
-    InteractvieComponent
+    InteractvieComponent,
+    ShapesComponent
   ],
   imports: [
     BrowserModule,
