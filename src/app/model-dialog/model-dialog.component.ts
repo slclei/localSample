@@ -11,6 +11,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { InteractvieComponent } from '../interactvie/interactvie.component';
 import { TestComponent } from '../test/test.component';
+import { AreaFormationDlgComponent } from '../area-formation-dlg/area-formation-dlg.component';
 //<app-test class="app-test"></app-test>
 @Component({
   selector: 'app-model-dialog',
@@ -50,6 +51,9 @@ export class ModelDialogComponent implements OnInit {
     } else if (this.selectedComponent === 'Test') {
       //const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ComponentBComponent);
       this.canvas_PRef.createComponent(TestComponent);
+    } else if (this.selectedComponent === 'Afd') {
+      //const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ComponentBComponent);
+      this.canvas_PRef.createComponent(AreaFormationDlgComponent);
     }
   }
 }

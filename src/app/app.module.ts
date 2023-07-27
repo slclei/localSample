@@ -12,6 +12,7 @@ import { GeojsonComponent } from './geojson/geojson.component';
 import { InteractvieComponent } from './interactvie/interactvie.component';
 import { FormsModule } from '@angular/forms';
 import { ShapesComponent } from './shapes/shapes.component';
+import { AreaFormationDlgComponent } from './area-formation-dlg/area-formation-dlg.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ShapesComponent } from './shapes/shapes.component';
     ModelDialogComponent,
     TestComponent,
     InteractvieComponent,
-    ShapesComponent
+    ShapesComponent,
+    AreaFormationDlgComponent
   ],
   imports: [
     BrowserModule,
